@@ -25,3 +25,9 @@ RUN   apt --yes update && \
       apt --yes autoclean && \
       apt --yes clean && \
       rm -rf /var/lib/apt/lists/*
+
+RUN   curl -S http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.8.zip -o /tmp/fastqc.zip && \
+      unzip -d /usr/local/src /tmp/fastqc.zip && \
+      chmod +x /usr/local/src/FastQC/fastqc && \
+      ln -s /usr/local/src/FastQC/fastqc /usr/local/bin/fastqc && \
+      rm -f /tmp/fastqc.zip
