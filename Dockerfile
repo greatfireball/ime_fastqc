@@ -13,3 +13,15 @@ LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
       org.label-schema.vcs-ref=${VCS_REF} \
       org.label-schema.build-date=${BUILD_DATE} \
       org.label-schema.vcs-url="https://github.com/greatfireball/ime_fastqc.git"
+
+RUN   apt --yes update && \
+      apt --yes install --no-install-recommends --no-install-suggests \
+        ca-certificates \
+	curl \
+	default-jre \
+	perl \
+	unzip && \
+      apt --yes autoremove && \
+      apt --yes autoclean && \
+      apt --yes clean && \
+      rm -rf /var/lib/apt/lists/*
