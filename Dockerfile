@@ -34,3 +34,5 @@ RUN   curl -S http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0
 
 VOLUME /data
 WORKDIR /data
+
+ENTRYPOINT ["/usr/local/bin/fastqc"]
