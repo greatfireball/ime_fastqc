@@ -31,3 +31,6 @@ RUN   curl -S http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0
       chmod +x /usr/local/src/FastQC/fastqc && \
       ln -s /usr/local/src/FastQC/fastqc /usr/local/bin/fastqc && \
       rm -f /tmp/fastqc.zip
+
+VOLUME /data
+WORKDIR /data
