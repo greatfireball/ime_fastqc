@@ -25,7 +25,7 @@ Therefore, input data should be mounted using `/data` volume.
 Running the command to get the information for a local file `localfile` in the current folder:
 
 ```
-docker run --rm -v $PWD:/data greatfireball/ime_fastqc localfile
+docker run --rm -v $PWD:/data greatfireball/ime_fastqc --nogroup --noextract --outdir ./fastqc/ --threads 1 localfile
 ```
 
 ## Releases
